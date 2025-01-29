@@ -1,0 +1,34 @@
+﻿@page "/healthcheck"
+@inject ApiServiceClient ApiClient
+
+<h3>Service Health Status</h3>
+
+@if (status == null)
+{
+    <p>Loading health status...</p>
+}
+else
+{
+    <ul>
+        @foreach (var entry in status)
+        {
+            <li>@entry.Key: <strong>@entry.Value</strong></li>
+        }
+    </ul>
+}
+
+<h3>Service Greetings</h3>
+
+@if (greetings == null)
+{
+    <p>Loading greetings...</p>
+}
+else
+{
+    <ul>
+        @foreach (var entry in greetings)
+        {
+            <li>@entry.Key: <strong>@entry.Value</strong></li>
+        }
+    </ul>
+}
